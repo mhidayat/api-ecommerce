@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@fastify/basic-auth": "^6.0.3",
+    "@fastify/cors": "^10.0.2",
+    "fastify": "^5.2.1",
+    "pg": "^8.13.1",
+    "pg-promise": "^11.10.2",
+    "postgrator": "^8.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node build/apps.js",
+    "dev": "tsc -p tsconfig.json && node build/apps.js",
+    "migrate": "node database/migration-script.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/node": "^22.13.1",
+    "@types/pg": "^8.11.11",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  }
+}

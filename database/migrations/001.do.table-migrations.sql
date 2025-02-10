@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS product (
+  id SERIAL PRIMARY KEY NOT NULL,
+  title TEXT NOT NULL,
+  sku VARCHAR UNIQUE NOT NULL,
+  stock INT NOT NULL,
+  image TEXT NOT NULL,
+  description TEXT NULL
+);
+
+CREATE TABLE IF NOT EXISTS adjustment_transaction (
+  id SERIAL PRIMARY KEY NOT NULL,
+  sku TEXT NOT NULL,
+  qty INT NOT NULL,
+  amount INT NOT NULL,
+  CONSTRAINT fk_sku FOREIGN KEY (sku)
+  REFERENCES product(sku)
+);

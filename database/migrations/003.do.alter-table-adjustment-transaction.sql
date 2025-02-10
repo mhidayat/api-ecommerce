@@ -1,0 +1,5 @@
+ALTER TABLE IF EXISTS adjustment_transaction 
+DROP CONSTRAINT fk_sku, 
+ADD CONSTRAINT fk_sku FOREIGN KEY (sku)
+REFERENCES product(sku)
+ON DELETE CASCADE;
